@@ -36,12 +36,12 @@ export default function HowToBuy() {
     {
       number: 3,
       title: "Swap on Raydium",
-      description: "Go to Raydium DEX, paste the FTF contract address, and swap your SOL for $FTF.",
+      description: "Go to Raydium DEX, paste the FTFC contract address, and swap your SOL for $FTFC.",
     },
     {
       number: 4,
       title: "HODL & Spread",
-      description: "Hold your $FTF with diamond hands and spread the anti-farming revolution!",
+      description: "Hold your $FTFC with diamond hands and spread the anti-farming revolution!",
     },
   ];
 

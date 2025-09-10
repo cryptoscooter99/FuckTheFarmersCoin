@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-6 md:mb-0" data-testid="footer-logo">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-ftf-gold to-ftf-teal"></div>
-              <span className="font-display font-bold text-2xl text-ftf-gold">FTF COIN</span>
+              <span className="font-display font-bold text-2xl text-ftf-gold">FTFC COIN</span>
             </div>
 
             <div className="flex items-center space-x-6" data-testid="footer-social-links">
@@ -37,13 +37,13 @@ export default function Footer() {
 
           <div className="mt-8 pt-8 border-t border-ftf-gold/20 text-center" data-testid="footer-legal">
             <p className="opacity-80">
-              © 2024 FTF Coin. No rights reserved. Fuck the farmers. Not financial advice.
+              © 2024 FTFC Coin. No rights reserved. Fuck the farmers. Not financial advice.
             </p>
             <p className="mt-2 text-sm opacity-60">
               Built by the community, for the community. No VCs, no farms, just vibes.
             </p>
             <p className="mt-4 text-xs opacity-50 max-w-3xl mx-auto">
-              <strong>Legal Notice:</strong> FTF is a meme coin with no intrinsic value, no expectation of financial return, and no formal team or roadmap. 
+              <strong>Legal Notice:</strong> FTFC is a meme coin with no intrinsic value, no expectation of financial return, and no formal team or roadmap. 
               It is not an investment. Do not buy more than you can afford to lose. This site contains no financial advice.
             </p>
           </div>

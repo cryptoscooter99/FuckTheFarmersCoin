@@ -33,7 +33,7 @@ export default function Roadmap() {
       icon: Crown,
       items: [
         "👑 Global anti-farming movement",
-        "👑 FTF becomes the standard for non-agricultural memes",
+        "👑 FTFC becomes the standard for non-agricultural memes",
         "👑 We'll do it live - whatever the community wants",
         "👑 Moon mission (but not farm moon)",
       ],

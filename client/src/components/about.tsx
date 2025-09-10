@@ -4,7 +4,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display text-5xl md:text-6xl font-bold mb-8 text-ftf-gold" data-testid="about-title">
-            WHY CHOOSE $FTF?
+            WHY CHOOSE $FTFC?
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -29,7 +29,7 @@ export default function About() {
 
           <div className="mt-16 p-8 glass-card rounded-2xl" data-testid="about-description">
             <p className="text-xl leading-relaxed">
-              <span className="text-ftf-gold font-bold">FTF</span> is a community-powered meme coin that celebrates builders over farmers.
+              <span className="text-ftf-gold font-bold">FTFC</span> is a community-powered meme coin that celebrates builders over farmers.
               No roadmap promises about harvest seasons. No yield farming bullshit.
               Just pure, unfiltered <span className="text-ftf-gold font-bold">VIBES</span> and middle fingers to agricultural metaphors.
             </p>

@@ -50,7 +50,7 @@ export default function Tokenomics() {
           <div className="mt-12 p-6 bg-red-500/20 border border-red-500 rounded-2xl" data-testid="legal-notice">
             <p className="text-center text-lg">
               <span className="text-red-400 mr-2">⚠️</span>
-              <strong>Legal Notice:</strong> FTF is a meme coin with no intrinsic value or expectation of financial return.
+              <strong>Legal Notice:</strong> FTFC is a meme coin with no intrinsic value or expectation of financial return.
               For entertainment only. Don't invest your farm on this.
             </p>
           </div>

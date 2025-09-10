@@ -8,11 +8,11 @@ import {
 export default function FAQ() {
   const faqs = [
     {
-      question: "What the fuck is FTF?",
-      answer: "FTF (Fuck The Farmers) is a meme coin built on Solana that represents our collective exhaustion with agricultural metaphors in crypto. No more yield farming, crop harvesting, or seed planting. Just pure, unfiltered rebellion.",
+      question: "What the fuck is FTFC?",
+      answer: "FTFC (Fuck The Farmers) is a meme coin built on Solana that represents our collective exhaustion with agricultural metaphors in crypto. No more yield farming, crop harvesting, or seed planting. Just pure, unfiltered rebellion.",
     },
     {
-      question: "Will I get rich from FTF?",
+      question: "Will I get rich from FTFC?",
       answer: "Probably not, but you'll have fun losing money with other anti-farming degenerates. This is a meme coin with zero utility, zero promises, and maximum chaos. Invest only what you can afford to lose to the void.",
     },
     {
@@ -20,11 +20,11 @@ export default function FAQ() {
       answer: "We're a collective of anonymous builders who are tired of farming metaphors. No doxxed team, no venture capital, no corporate farming. Just pure grassroots (but not the farming kind) community energy.",
     },
     {
-      question: "Can I stake or farm FTF?",
+      question: "Can I stake or farm FTFC?",
       answer: "ABSOLUTELY FUCKING NOT. The entire point is that we don't farm. You can't stake it, farm it, or harvest it. You can only HODL it and spread the anti-farming revolution. No yields, no crops, just vibes.",
     },
     {
-      question: "When will FTF moon?",
+      question: "When will FTFC moon?",
       answer: "It will moon when the farmers are defeated and agricultural metaphors are banned from crypto forever. Until then, we HODL with diamond hands and spread chaos. The moon is not a farm - it's our destination.",
     },
   ];
