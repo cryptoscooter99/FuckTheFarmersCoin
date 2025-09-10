@@ -6,6 +6,11 @@ const TITLE = "Terms of Fuckery (FTFC)";
 export default function TermsOfFuckery() {
   return (
     <section className="min-h-screen py-20 px-6 max-w-4xl mx-auto text-left">
+      <div className="mb-6">
+        <Link href="/" className="inline-flex items-center px-4 py-2 bg-ftf-purple hover:bg-ftf-purple/80 text-white rounded-lg transition-colors font-semibold">
+          ← Back to Home
+        </Link>
+      </div>
       <header className="mb-10 text-center">
         <h1 className="font-urban text-4xl md:text-5xl tracking-tight text-ftf-gold">
           {TITLE}
