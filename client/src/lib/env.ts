@@ -7,7 +7,7 @@ export const env = {
   CHAIN: import.meta.env.VITE_CHAIN || "solana",
   BUY_URL: import.meta.env.VITE_BUY_URL || "https://raydium.io/swap",
   CHART_URL: import.meta.env.VITE_CHART_URL || "https://dexscreener.com/solana",
-  TWITTER: import.meta.env.VITE_TWITTER || "@ftfccoin",
+  TWITTER: import.meta.env.VITE_TWITTER || "https://x.com/fuckthefarmers?s=21",
   TELEGRAM: import.meta.env.VITE_TELEGRAM || "https://t.me/ftfccoin",
   DISCORD: import.meta.env.VITE_DISCORD || "https://discord.gg/ftfccoin",
   REDDIT: import.meta.env.VITE_REDDIT || "https://reddit.com/r/ftfccoin",
