@@ -1,6 +1,10 @@
 import { env } from "@/lib/env";
 import { useState } from "react";
 import ftfcCoinImage from "../assets/ftfc-coin.jpg";
+import xLogo from "../assets/x-logo.png";
+import coinmarketcapLogo from "../assets/coinmarketcap-logo.png";
+import coingeckoLogo from "../assets/coingecko-logo.png";
+import dexscreenerLogo from "../assets/dexscreener-logo.png";
 
 export default function Footer() {
   const [logoFallback, setLogoFallback] = useState(false);
@@ -9,26 +13,26 @@ export default function Footer() {
     { 
       name: "X (Twitter)", 
       url: env.TWITTER, 
-      icon: "𝕏",
-      color: "hover:text-white"
+      image: xLogo,
+      alt: "X (Twitter) Logo"
     },
     { 
       name: "CoinMarketCap", 
       url: "#", // Will be replaced with actual URL
-      icon: "📊",
-      color: "hover:text-blue-400"
+      image: coinmarketcapLogo,
+      alt: "CoinMarketCap Logo"
     },
     { 
       name: "CoinGecko", 
       url: "#", // Will be replaced with actual URL
-      icon: "🦎",
-      color: "hover:text-green-400"
+      image: coingeckoLogo,
+      alt: "CoinGecko Logo"
     },
     { 
       name: "DexScreener", 
       url: "#", // Will be replaced with actual URL
-      icon: "📈",
-      color: "hover:text-ftf-teal"
+      image: dexscreenerLogo,
+      alt: "DexScreener Logo"
     },
   ];
 
@@ -89,11 +93,15 @@ export default function Footer() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-2xl transition-colors ${link.color}`}
+                    className="transition-opacity hover:opacity-80"
                     aria-label={link.name}
                     data-testid={`crypto-link-${link.name.toLowerCase().replace(/[()\\s]/g, '-')}`}
                   >
-                    {link.icon}
+                    <img
+                      src={link.image}
+                      alt={link.alt}
+                      className="w-8 h-8 object-contain"
+                    />
                   </a>
                 ))}
               </div>
