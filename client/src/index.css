@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* FTF Brand Colors */
+  --ftf-purple: hsl(269, 54%, 46%);
+  --ftf-deeppurple: hsl(269, 54%, 28%);
+  --ftf-gold: hsl(41, 86%, 61%);
+  --ftf-gold-700: hsl(41, 86%, 41%);
+  --ftf-teal: hsl(178, 88%, 36%);
+  --ftf-lilac: hsl(269, 80%, 66%);
+  --ftf-text: hsl(48, 78%, 88%);
+
+  /* Base theme colors */
+  --background: hsl(269, 54%, 46%);
+  --foreground: hsl(48, 78%, 88%);
+  --card: hsl(269, 54%, 50%);
+  --card-foreground: hsl(48, 78%, 88%);
+  --popover: hsl(269, 54%, 46%);
+  --popover-foreground: hsl(48, 78%, 88%);
+  --primary: hsl(41, 86%, 61%);
+  --primary-foreground: hsl(269, 54%, 28%);
+  --secondary: hsl(269, 54%, 28%);
+  --secondary-foreground: hsl(48, 78%, 88%);
+  --muted: hsl(269, 54%, 86%);
+  --muted-foreground: hsl(269, 54%, 46%);
+  --accent: hsl(41, 86%, 61%);
+  --accent-foreground: hsl(269, 54%, 28%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(48, 78%, 88%);
+  --border: hsl(269, 30%, 82%);
+  --input: hsl(269, 30%, 86%);
+  --ring: hsl(269, 54%, 46%);
+  --chart-1: hsl(269, 54%, 46%);
+  --chart-2: hsl(41, 86%, 61%);
+  --chart-3: hsl(178, 88%, 36%);
+  --chart-4: hsl(269, 80%, 66%);
+  --chart-5: hsl(269, 54%, 28%);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(269, 54%, 28%);
+  --foreground: hsl(48, 78%, 88%);
+  --card: hsl(269, 54%, 32%);
+  --card-foreground: hsl(48, 78%, 88%);
+  --popover: hsl(269, 54%, 28%);
+  --popover-foreground: hsl(48, 78%, 88%);
+  --primary: hsl(41, 86%, 61%);
+  --primary-foreground: hsl(269, 54%, 28%);
+  --secondary: hsl(269, 54%, 20%);
+  --secondary-foreground: hsl(48, 78%, 88%);
+  --muted: hsl(269, 54%, 20%);
+  --muted-foreground: hsl(269, 30%, 70%);
+  --accent: hsl(41, 86%, 61%);
+  --accent-foreground: hsl(269, 54%, 28%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(48, 78%, 88%);
+  --border: hsl(269, 30%, 40%);
+  --input: hsl(269, 30%, 35%);
+  --ring: hsl(269, 54%, 46%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--ftf-purple);
+    color: var(--ftf-text);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-cta {
+    @apply bg-ftf-gold text-ftf-deeppurple rounded-full font-bold uppercase tracking-wider transition-all duration-200;
+    box-shadow: 0 8px 0 var(--ftf-gold-700), 0 16px 32px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.03em;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0 var(--ftf-gold-700), 0 22px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .btn-teal {
+    @apply bg-ftf-teal text-white rounded-full font-bold uppercase tracking-wider transition-all duration-200;
+    box-shadow: 0 8px 0 hsl(178, 88%, 26%), 0 16px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-teal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0 hsl(178, 88%, 26%), 0 22px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .glass-card {
+    background: rgba(110, 56, 181, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(246, 183, 60, 0.2);
+  }
+
+  .coin-shadow {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) drop-shadow(0 6px 12px rgba(246, 183, 60, 0.2));
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--ftf-gold), var(--ftf-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sticky-header {
+    backdrop-filter: blur(10px);
+    background: rgba(110, 56, 181, 0.9);
+    border-bottom: 1px solid rgba(246, 183, 60, 0.2);
+  }
+
+  .shadow-coin {
+    box-shadow: 0 6px 0 var(--ftf-gold-700), 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@layer utilities {
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
