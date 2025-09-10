@@ -33,6 +33,10 @@ export default function Hero() {
             alt="FTFC Coin - Fuck The Farmers"
             className="w-full h-full object-contain"
             data-testid="hero-logo"
+            onError={(e) => {
+              console.error('Image failed to load:', e);
+              e.currentTarget.src = '/logo.svg';
+            }}
           />
         </div>
 
