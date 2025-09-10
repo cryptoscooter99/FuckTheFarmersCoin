@@ -117,8 +117,8 @@ export default function TermsOfFuckery() {
         <Section title="12) Contact">
           <p>
             Questions? Ping us on Telegram or X (see footer), or email{" "}
-            <a href="mailto:team@ftfccoin.xyz" className="underline text-ftf-gold hover:text-ftf-gold/80">
-              team@ftfccoin.xyz
+            <a href="mailto:team@fuckthefarmerscoin.xyz" className="underline text-ftf-gold hover:text-ftf-gold/80">
+              team@fuckthefarmerscoin.xyz
             </a>
             .
           </p>
