@@ -1,61 +1,30 @@
-import { Coins, Percent, Droplets, Flame } from "lucide-react";
+import Section from "@/components/section";
 
-export default function Tokenomics() {
+const rows = [
+  { label: "Max Supply", value: "1,000,000,000 FTFC" },
+  { label: "Taxes", value: "0% buy / 0% sell / 0% transfer" },
+  { label: "Launch Model", value: "Fair launch. 100% of supply added to initial LP, LP tokens burned permanently in the launch tx." },
+  { label: "Contract", value: "Trading enabled at launch. Ownership renounced or time‑lock documented (no privileged mint/blacklist)." },
+  { label: "Team & Treasury", value: "None. No team allocation. No marketing wallet. Community‑funded initiatives only (donations/merch)." },
+  { label: "CEX/Partnerships", value: "Sourced from community donations after launch. No new token mints." },
+  { label: "Burn Mechanics", value: "LP tokens burned at launch. Optional future event burns only from donations or revenue (if any)." },
+  { label: "Liquidity Policy", value: "Immutable: burned LP + no ability to withdraw ensures permanent on‑chain liquidity." },
+];
+
+export default function Tokenomics(){
   return (
-    <section id="tokenomics" className="py-20 bg-ftf-purple">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-center mb-12 text-ftf-gold" data-testid="tokenomics-title">
-            TOKENOMICS
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card rounded-2xl p-8 shadow-coin" data-testid="tokenomics-supply">
-              <h3 className="font-display text-2xl font-bold mb-4 text-ftf-gold flex items-center">
-                <Coins className="mr-2" size={24} />
-                Supply
-              </h3>
-              <div className="text-3xl font-bold mb-2">1,000,000,000</div>
-              <p className="opacity-80">Total supply capped. No farming new tokens.</p>
-            </div>
-
-            <div className="glass-card rounded-2xl p-8 shadow-coin" data-testid="tokenomics-taxes">
-              <h3 className="font-display text-2xl font-bold mb-4 text-ftf-gold flex items-center">
-                <Percent className="mr-2" size={24} />
-                Taxes
-              </h3>
-              <div className="text-3xl font-bold mb-2 text-ftf-teal">0%</div>
-              <p className="opacity-80">No buy/sell taxes. Touch grass, not our tokens.</p>
-            </div>
-
-            <div className="glass-card rounded-2xl p-8 shadow-coin" data-testid="tokenomics-liquidity">
-              <h3 className="font-display text-2xl font-bold mb-4 text-ftf-gold flex items-center">
-                <Droplets className="mr-2" size={24} />
-                Liquidity
-              </h3>
-              <div className="text-3xl font-bold mb-2 text-ftf-lilac">Locked</div>
-              <p className="opacity-80">LP tokens burned. No rug, only fuck farmers.</p>
-            </div>
-
-            <div className="glass-card rounded-2xl p-8 shadow-coin" data-testid="tokenomics-burns">
-              <h3 className="font-display text-2xl font-bold mb-4 text-ftf-gold flex items-center">
-                <Flame className="mr-2" size={24} />
-                Burns
-              </h3>
-              <div className="text-3xl font-bold mb-2 text-red-400">Random</div>
-              <p className="opacity-80">Burn events when we feel like it. Chaos over crops.</p>
-            </div>
+    <Section id="tokenomics" title="Tokenomics" className="bg-ftf-purple">
+      <div className="grid gap-4 md:grid-cols-2">
+        {rows.map(r => (
+          <div key={r.label} className="p-6 rounded-2xl bg-ftf-purple/40 border border-white/10 shadow-coin">
+            <h3 className="font-display text-2xl mb-1 text-ftf-gold">{r.label}</h3>
+            <p className="opacity-90">{r.value}</p>
           </div>
-
-          <div className="mt-12 p-6 bg-red-500/20 border border-red-500 rounded-2xl" data-testid="legal-notice">
-            <p className="text-center text-lg">
-              <span className="text-red-400 mr-2">⚠️</span>
-              <strong>Legal Notice:</strong> FTFC is a meme coin with no intrinsic value or expectation of financial return.
-              For entertainment only. Don't invest your farm on this.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+      <p className="mt-6 text-sm opacity-80">
+        Note: FTFC is a meme coin with no intrinsic value or expectation of financial return. This information is for entertainment, not financial advice.
+      </p>
+    </Section>
   );
 }
