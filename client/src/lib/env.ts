@@ -3,7 +3,7 @@ export const env = {
   // Public site config
   TOKEN_SYMBOL: import.meta.env.VITE_TOKEN_SYMBOL || "FTFC",
   TOKEN_NAME: import.meta.env.VITE_TOKEN_NAME || "Fuck The Farmers Coin",
-  TOKEN_ADDRESS: import.meta.env.VITE_TOKEN_ADDRESS || "REPLACE_ME",
+  TOKEN_ADDRESS: import.meta.env.VITE_TOKEN_ADDRESS || "XxxtZghs6NRGjezReEpVV8REoDomGszov3jf8ARFTFC",
   CHAIN: import.meta.env.VITE_CHAIN || "solana",
   BUY_URL: import.meta.env.VITE_BUY_URL || "https://raydium.io/swap",
   CHART_URL: import.meta.env.VITE_CHART_URL || "https://dexscreener.com/solana",
