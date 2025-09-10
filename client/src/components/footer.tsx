@@ -1,5 +1,6 @@
 import { env } from "@/lib/env";
 import { useState } from "react";
+import { Link } from "wouter";
 import ftfcCoinImage from "../assets/ftfc-coin.jpg";
 import xLogo from "../assets/x-logo.png";
 import coinmarketcapLogo from "../assets/coinmarketcap-logo.png";
@@ -134,6 +135,11 @@ export default function Footer() {
               <p className="text-sm opacity-80">
                 © 2024 FTFC Coin. No rights reserved. Fuck the farmers. Not financial advice.
               </p>
+              <div className="flex justify-center space-x-6 text-sm">
+                <Link href="/terms" className="underline text-ftf-gold hover:text-ftf-gold/80">
+                  Terms of Fuckery
+                </Link>
+              </div>
               <p className="text-xs opacity-60 max-w-4xl mx-auto leading-relaxed">
                 <strong>Disclaimer:</strong> FTFC is a meme coin with no intrinsic value, no expectation of financial return, and no formal team or roadmap. 
                 This is not an investment. Only spend what you can afford to lose completely. This website contains no financial advice.

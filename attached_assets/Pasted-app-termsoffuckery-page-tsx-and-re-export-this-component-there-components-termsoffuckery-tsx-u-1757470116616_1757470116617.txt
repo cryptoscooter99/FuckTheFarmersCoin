@@ -1,0 +1,195 @@
+app/termsoffuckery/page.tsx and re-export this component there.
+
+// components/termsoffuckery.tsx
+"use client";
+
+import Link from "next/link";
+
+const LAST_UPDATED = "2025-09-09";
+const TITLE = "Terms of Fuckery (FTF)";
+
+export default function TermsOfFuckery() {
+  return (
+    <section className="min-h-screen py-20 px-6 max-w-4xl mx-auto text-left">
+      <header className="mb-10 text-center">
+        <h1 className="font-display text-4xl md:text-5xl tracking-tight text-ftf-gold">
+          {TITLE}
+        </h1>
+        <p className="opacity-80 mt-2">Last updated: {LAST_UPDATED}</p>
+      </header>
+
+      <div className="space-y-8 leading-relaxed">
+        <Intro />
+
+        <Section title="1) Entertainment-Only • No Financial Advice">
+          <p>
+            FTF is a <b>meme coin</b>. It has <b>no intrinsic value</b>, may be
+            completely useless, and is intended for entertainment and culture.
+            Nothing on this site, the app, socials, or community chats is or
+            should be taken as investment, legal, tax, or other professional
+            advice. Do your own research.
+          </p>
+        </Section>
+
+        <Section title="2) No Promises, Roadmaps, or Obligations">
+          <p>
+            There are <b>no promises</b> of price action, listings, features,
+            or future development. Any plans shown are aspirational memes, not
+            binding commitments. The project may change, pause, or end at any
+            time without notice.
+          </p>
+        </Section>
+
+        <Section title="3) Token Mechanics & Supply">
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Max supply: 1,000,000,000 FTF.</li>
+            <li>Launch model: 100% of supply added to initial LP; LP tokens burnt.</li>
+            <li>Taxes: 0% buy / 0% sell / 0% transfer (if this changes, we’ll post it).</li>
+            <li>No team allocation, no marketing wallet. Community efforts are donation-based.</li>
+          </ul>
+          <p className="mt-3 opacity-80">
+            Smart contracts are immutable once renounced/locked. Interactions
+            with third-party DEXes, trackers, and bridges are at your own risk.
+          </p>
+        </Section>
+
+        <Section title="4) Eligibility & Local Laws">
+          <p>
+            You are responsible for ensuring that purchasing, holding, or
+            interacting with FTF is legal where you live. By using the site or
+            token, you confirm you’re at least the age of majority in your
+            jurisdiction and not prohibited by sanctions or local rules.
+          </p>
+        </Section>
+
+        <Section title="5) Assumption of Risk">
+          <p>
+            Crypto is volatile. Smart contracts can fail. Networks can clog.
+            Liquidity can vanish. Prices can go to zero. By interacting with
+            FTF you accept all risks, including the risk of total loss.
+          </p>
+        </Section>
+
+        <Section title="6) Taxes & Reporting">
+          <p>
+            You’re solely responsible for any taxes, reporting, or filings
+            related to your activity. We do not provide statements, cost basis,
+            or individualized tax support.
+          </p>
+        </Section>
+
+        <Section title="7) Privacy">
+          <p>
+            We try to keep things minimal. If we collect any data (e.g. email
+            for updates), it’s used only for communications you opted into and
+            can be deleted upon request. On-chain activity is public.
+          </p>
+        </Section>
+
+        <Section title="8) Community Rules">
+          <ul className="list-disc pl-6 space-y-2">
+            <li>No scams, doxxing, or illegal content.</li>
+            <li>No impersonation of team or partners.</li>
+            <li>Mods may remove content or users at their discretion.</li>
+          </ul>
+        </Section>
+
+        <Section title="9) Trademarks & Content">
+          <p>
+            “Fuck The Farmers Coin”, “FTF”, the logo, and associated brand
+            assets are used by the community for memes and marketing. Don’t use
+            the brand in misleading ways or imply endorsements/sponsorships.
+            Third-party trademarks belong to their respective owners.
+          </p>
+        </Section>
+
+        <Section title="10) Third-Party Links">
+          <p>
+            Links to wallets, DEXes, charts, and tools are provided for
+            convenience and do not imply endorsement. We’re not responsible for
+            their content, security, or availability.
+          </p>
+        </Section>
+
+        <Section title="11) Changes">
+          <p>
+            These terms can change at any time. Continued use of the site or
+            token after changes means you accept the updated terms. We’ll keep
+            the “Last updated” date current.
+          </p>
+        </Section>
+
+        <Section title="12) Contact">
+          <p>
+            Questions? Ping us on Telegram or X (see footer), or email{" "}
+            <a href="mailto:team@ftfcoin.xyz" className="underline text-ftf-gold">
+              team@ftfcoin.xyz
+            </a>
+            .
+          </p>
+        </Section>
+
+        <footer className="mt-10 pt-6 border-t border-white/10 text-sm opacity-80">
+          <p>
+            LEGAL VIBES ONLY: You acknowledge the above, accept full
+            responsibility for your actions, and agree to hold harmless the FTF
+            contributors for any losses or memetic side effects.
+          </p>
+          <p className="mt-2">
+            <Link href="/" className="underline text-ftf-gold">
+              ← Back to Home
+            </Link>
+          </p>
+        </footer>
+      </div>
+    </section>
+  );
+}
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <h2 className="font-display text-2xl md:text-3xl mb-2 text-ftf-gold">
+        {title}
+      </h2>
+      <div className="space-y-3">{children}</div>
+    </section>
+  );
+}
+
+function Intro() {
+  return (
+    <div className="glass-card rounded-2xl p-6 mb-4">
+      <p className="mb-3">
+        Welcome, degen. These are the ground rules for using the FTF website,
+        token, and community stuff (“<b>Services</b>”). By touching any of this,
+        you agree to the Terms below. If you don’t agree, close the tab and go
+        touch grass.
+      </p>
+      <p className="opacity-80">
+        TL;DR: FTF is a <b>joke</b>. Treat it like one. Don’t risk rent money.
+      </p>
+    </div>
+  );
+}
+
+To expose as a page (Next.js App Router)
+
+Create app/termsoffuckery/page.tsx:
+
+import TermsOfFuckery from "@/components/termsoffuckery";
+
+export const metadata = {
+  title: "Terms of Fuckery — FTF",
+  description: "The only terms you’ll read twice.",
+};
+
+export default function Page() {
+  return <TermsOfFuckery />;
+}
