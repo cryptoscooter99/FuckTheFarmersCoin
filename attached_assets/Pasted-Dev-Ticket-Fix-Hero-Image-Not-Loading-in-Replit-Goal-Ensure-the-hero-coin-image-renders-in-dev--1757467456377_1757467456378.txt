@@ -1,9 +1,71 @@
+Dev Ticket — Fix Hero Image Not Loading in Replit
+
+Goal: Ensure the hero coin image renders in dev (Replit) and in Vercel builds.
+
+Tasks
+
+Normalize & place asset
+
+Convert the coin file to web-friendly size (≤ 512–1024px, < 200KB).
+
+Save as public/ftfc-coin.jpg (all lowercase).
+Command (mac):
+sips -Z 1024 path/to/IMG_9457.JPG --out public/ftfc-coin.jpg
+
+Ensure fallback exists
+
+Put a fallback at public/logo.svg (or change the code to a file that exists).
+
+Use Next static import (avoids path typos)
+
+Import the image in the component and render with next/image. This catches missing files at build time.
+
+TypeScript & config sanity
+
+No extra typings needed for Next static image imports.
+
+Keep images.unoptimized = true in next.config.mjs if you prefer (already fine for Vercel).
+
+export default { images: { unoptimized: true } }
+
+
+Verify in Replit terminal
+
+npm run dev then hit the dev URL.
+
+Open the dev tools → Network → filter “ftfc-coin” to confirm 200.
+
+If you still see 404, check the exact filename/case and location.
+
+Commit
+
+git add public/ftfc-coin.jpg public/logo.svg components/hero.tsx
+
+git commit -m "fix(hero): use static image import and ensure public assets"
+
+Deploy to Vercel.
+
+Patched components/hero.tsx
+
+This version:
+
+Uses next/image with a static import (build-time path check).
+
+Keeps your styles/CTAs.
+
+Provides a client-side fallback to /logo.svg if the image errors (via a small state toggle).
+
+"use client";
+
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { env } from "@/lib/env";
 import { useToast } from "@/hooks/use-toast";
 import { Copy, Rocket, TrendingUp } from "lucide-react";
-import ftfcCoinImage from "../assets/ftfc-coin.jpg";
+
+// IMPORTANT: file must exist at public/ftfc-coin.jpg (lowercase)
+import coinImg from "@/public/ftfc-coin.jpg"; // ✅ build-time checked
 
 export default function Hero() {
   const { toast } = useToast();
@@ -12,43 +74,32 @@ export default function Hero() {
   const copyContract = async () => {
     try {
       await navigator.clipboard.writeText(env.TOKEN_ADDRESS);
-      toast({
-        title: "Contract Copied!",
-        description: "Contract address copied to clipboard",
-      });
-    } catch (err) {
-      toast({
-        title: "Copy Failed",
-        description: "Failed to copy contract address",
-        variant: "destructive",
-      });
+      toast({ title: "Contract Copied!", description: "Contract address copied to clipboard" });
+    } catch {
+      toast({ title: "Copy Failed", description: "Failed to copy contract address", variant: "destructive" });
     }
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-ftf-purple via-ftf-deeppurple to-ftf-purple opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-ftf-purple via-ftf-deeppurple to-ftf-purple opacity-90" />
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Coin Logo */}
         <div className="mx-auto w-80 h-80 mb-8 coin-shadow float-animation">
           {!fallback ? (
-            <img
-              src={ftfcCoinImage}
+            <Image
+              src={coinImg}
               alt="FTFC Coin - Fuck The Farmers"
               className="w-full h-full object-contain rounded-full"
-              data-testid="hero-logo"
-              onLoad={() => console.log('FTFC image loaded successfully')}
-              onError={() => {
-                console.error('FTFC image failed to load, falling back to logo');
-                setFallback(true);
-              }}
+              priority
+              sizes="(max-width: 768px) 60vw, 320px"
+              onError={() => setFallback(true)}
             />
           ) : (
             <img
               src="/logo.svg"
-              alt="FTFC Logo Fallback"
-              className="w-full h-full object-contain"
-              data-testid="hero-logo-fallback"
+              alt="FTFC Logo"
+              className="w-full h-full object-contain rounded-full"
             />
           )}
         </div>
@@ -71,7 +122,7 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <Button
             className="btn-cta px-8 py-4 text-lg"
-            onClick={() => window.open(env.BUY_URL, '_blank')}
+            onClick={() => window.open(env.BUY_URL, "_blank")}
             data-testid="hero-buy-button"
           >
             <Rocket className="mr-2" size={20} />
@@ -79,7 +130,7 @@ export default function Hero() {
           </Button>
           <Button
             className="btn-teal px-8 py-4 text-lg"
-            onClick={() => window.open(env.CHART_URL, '_blank')}
+            onClick={() => window.open(env.CHART_URL, "_blank")}
             data-testid="hero-chart-button"
           >
             <TrendingUp className="mr-2" size={20} />
@@ -95,7 +146,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        {/* Live Market Data */}
+        {/* Live Market Data (static placeholders) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           <div className="glass-card rounded-2xl p-4 text-center" data-testid="market-price">
             <div className="text-2xl font-bold text-ftf-gold">$0.0042</div>
