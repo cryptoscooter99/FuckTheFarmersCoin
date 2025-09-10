@@ -1,9 +1,6 @@
 import { env } from "@/lib/env";
 import { useState } from "react";
 import ftfcCoinImage from "../assets/ftfc-coin.jpg";
-import { FaXTwitter, FaTelegram, FaDiscord, FaReddit } from "react-icons/fa6";
-import { SiCoinmarketcap, SiCoingecko } from "react-icons/si";
-import { TbChartLine } from "react-icons/tb";
 
 export default function Footer() {
   const [logoFallback, setLogoFallback] = useState(false);
@@ -12,25 +9,25 @@ export default function Footer() {
     { 
       name: "X (Twitter)", 
       url: env.TWITTER, 
-      icon: FaXTwitter,
+      icon: "𝕏",
       color: "hover:text-white"
     },
     { 
       name: "CoinMarketCap", 
       url: "#", // Will be replaced with actual URL
-      icon: SiCoinmarketcap,
+      icon: "📊",
       color: "hover:text-blue-400"
     },
     { 
       name: "CoinGecko", 
       url: "#", // Will be replaced with actual URL
-      icon: SiCoingecko,
+      icon: "🦎",
       color: "hover:text-green-400"
     },
     { 
       name: "DexScreener", 
       url: "#", // Will be replaced with actual URL
-      icon: TbChartLine,
+      icon: "📈",
       color: "hover:text-ftf-teal"
     },
   ];
@@ -39,19 +36,19 @@ export default function Footer() {
     { 
       name: "Telegram", 
       url: env.TELEGRAM, 
-      icon: FaTelegram,
+      icon: "📢",
       color: "hover:text-blue-400"
     },
     { 
       name: "Discord", 
       url: env.DISCORD, 
-      icon: FaDiscord,
+      icon: "💬",
       color: "hover:text-indigo-400"
     },
     { 
       name: "Reddit", 
       url: env.REDDIT, 
-      icon: FaReddit,
+      icon: "🔴",
       color: "hover:text-orange-400"
     },
   ];
@@ -86,22 +83,19 @@ export default function Footer() {
             <div className="text-center">
               <h3 className="font-urban text-lg font-bold text-ftf-gold mb-4">Track $FTFC</h3>
               <div className="flex justify-center space-x-4">
-                {cryptoLinks.map((link) => {
-                  const IconComponent = link.icon;
-                  return (
-                    <a
-                      key={link.name}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`text-2xl transition-colors ${link.color}`}
-                      aria-label={link.name}
-                      data-testid={`crypto-link-${link.name.toLowerCase().replace(/[()\s]/g, '-')}`}
-                    >
-                      <IconComponent />
-                    </a>
-                  );
-                })}
+                {cryptoLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-2xl transition-colors ${link.color}`}
+                    aria-label={link.name}
+                    data-testid={`crypto-link-${link.name.toLowerCase().replace(/[()\\s]/g, '-')}`}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -109,22 +103,19 @@ export default function Footer() {
             <div className="text-center md:text-right">
               <h3 className="font-urban text-lg font-bold text-ftf-gold mb-4">Community</h3>
               <div className="flex justify-center md:justify-end space-x-4">
-                {socialLinks.map((link) => {
-                  const IconComponent = link.icon;
-                  return (
-                    <a
-                      key={link.name}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`text-2xl transition-colors ${link.color}`}
-                      aria-label={link.name}
-                      data-testid={`social-link-${link.name.toLowerCase()}`}
-                    >
-                      <IconComponent />
-                    </a>
-                  );
-                })}
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-2xl transition-colors ${link.color}`}
+                    aria-label={link.name}
+                    data-testid={`social-link-${link.name.toLowerCase()}`}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
