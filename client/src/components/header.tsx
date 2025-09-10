@@ -3,9 +3,11 @@ import { Menu, X } from "lucide-react";
 import { env } from "@/lib/env";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import ftfcCoinImage from "../assets/ftfc-coin.jpg";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoFallback, setLogoFallback] = useState(false);
   const { toast } = useToast();
 
   const copyContract = async () => {
@@ -37,7 +39,16 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-ftf-gold to-ftf-teal"></div>
+            {!logoFallback ? (
+              <img
+                src={ftfcCoinImage}
+                alt="FTFC Coin"
+                className="w-8 h-8 rounded-full object-cover"
+                onError={() => setLogoFallback(true)}
+              />
+            ) : (
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-ftf-gold to-ftf-teal"></div>
+            )}
             <span className="font-display font-bold text-xl text-ftf-gold" data-testid="logo-text">FTFC</span>
           </div>
 
