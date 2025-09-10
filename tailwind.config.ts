@@ -66,8 +66,9 @@ export default {
         sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "Menlo", "monospace"],
-        display: ["Baloo 2", "Fredoka", "system-ui", "sans-serif"],
+        display: ["Urban Shadow", "Baloo 2", "Fredoka", "system-ui", "sans-serif"],
         body: ["Inter", "system-ui", "sans-serif"],
+        'urban': ["Urban Shadow", "system-ui", "sans-serif"],
       },
       boxShadow: {
         coin: "0 6px 0 var(--ftf-gold-700), 0 12px 24px rgba(0,0,0,.25)",

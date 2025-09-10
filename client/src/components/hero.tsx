@@ -53,7 +53,7 @@ export default function Hero() {
           )}
         </div>
 
-        <h1 className="font-display text-6xl md:text-8xl font-bold mb-4 tracking-tight">
+        <h1 className="font-urban text-6xl md:text-8xl font-bold mb-4 tracking-tight">
           <span className="text-gradient" data-testid="hero-title-line1">FUCK THE</span><br />
           <span className="text-ftf-gold" data-testid="hero-title-line2">FARMERS</span>
         </h1>
