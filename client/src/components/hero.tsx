@@ -29,8 +29,8 @@ export default function Hero() {
         {/* Coin Logo */}
         <div className="mx-auto w-80 h-80 mb-8 coin-shadow float-animation">
           <img
-            src="/logo.svg"
-            alt="FTF Coin - Fuck The Farmers"
+            src="/ftfc-logo.jpg"
+            alt="FTFC Coin - Fuck The Farmers"
             className="w-full h-full object-contain"
             data-testid="hero-logo"
           />
@@ -58,7 +58,7 @@ export default function Hero() {
             data-testid="hero-buy-button"
           >
             <Rocket className="mr-2" size={20} />
-            BUY $FTF
+            BUY $FTFC
           </Button>
           <Button
             className="btn-teal px-8 py-4 text-lg"

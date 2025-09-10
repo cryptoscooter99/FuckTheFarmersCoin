@@ -38,7 +38,7 @@ export default function Header() {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-ftf-gold to-ftf-teal"></div>
-            <span className="font-display font-bold text-xl text-ftf-gold" data-testid="logo-text">FTF</span>
+            <span className="font-display font-bold text-xl text-ftf-gold" data-testid="logo-text">FTFC</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -163,7 +163,7 @@ export default function Header() {
                   onClick={() => window.open(env.BUY_URL, '_blank')}
                   data-testid="mobile-buy-button"
                 >
-                  BUY $FTF
+                  BUY $FTFC
                 </Button>
                 <Button
                   className="btn-teal w-full"
