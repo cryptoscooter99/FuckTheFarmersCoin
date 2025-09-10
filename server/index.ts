@@ -4,7 +4,13 @@ import { setupVite, serveStatic, log } from "./vite";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+const corsOrigin = process.env.CORS_ORIGIN || true;
+app.use(
+  cors({
+    origin: corsOrigin as boolean | string | RegExp | (string | RegExp)[] | undefined,
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
