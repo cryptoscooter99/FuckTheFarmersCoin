@@ -12,12 +12,6 @@ export default function Footer() {
   
   const cryptoLinks = [
     { 
-      name: "X (Twitter)", 
-      url: env.TWITTER, 
-      image: xLogo,
-      alt: "X (Twitter) Logo"
-    },
-    { 
       name: "CoinMarketCap", 
       url: "#", // Will be replaced with actual URL
       image: coinmarketcapLogo,
@@ -39,22 +33,10 @@ export default function Footer() {
 
   const socialLinks = [
     { 
-      name: "Telegram", 
-      url: env.TELEGRAM, 
-      icon: "📢",
-      color: "hover:text-blue-400"
-    },
-    { 
-      name: "Discord", 
-      url: env.DISCORD, 
-      icon: "💬",
-      color: "hover:text-indigo-400"
-    },
-    { 
-      name: "Reddit", 
-      url: env.REDDIT, 
-      icon: "🔴",
-      color: "hover:text-orange-400"
+      name: "X (Twitter)", 
+      url: env.TWITTER, 
+      image: xLogo,
+      alt: "X (Twitter) Logo"
     },
   ];
 
@@ -118,11 +100,15 @@ export default function Footer() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-2xl transition-colors ${link.color}`}
+                    className="transition-opacity hover:opacity-80"
                     aria-label={link.name}
-                    data-testid={`social-link-${link.name.toLowerCase()}`}
+                    data-testid={`social-link-${link.name.toLowerCase().replace(/[()\\s]/g, '-')}`}
                   >
-                    {link.icon}
+                    <img
+                      src={link.image}
+                      alt={link.alt}
+                      className="w-8 h-8 object-contain"
+                    />
                   </a>
                 ))}
               </div>
