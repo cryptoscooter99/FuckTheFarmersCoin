@@ -29,10 +29,11 @@ export default function Hero() {
         {/* Coin Logo */}
         <div className="mx-auto w-80 h-80 mb-8 coin-shadow float-animation">
           <img
-            src="/ftfc-logo.jpg"
+            src="/ftfc-coin.jpg"
             alt="FTFC Coin - Fuck The Farmers"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-full"
             data-testid="hero-logo"
+            onLoad={() => console.log('FTFC image loaded successfully')}
             onError={(e) => {
               console.error('Image failed to load:', e);
               e.currentTarget.src = '/logo.svg';
