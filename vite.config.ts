@@ -16,6 +16,9 @@ export default defineConfig({
         ]
       : []),
   ],
+  // Use relative paths so the static build works when hosted under a subpath
+  // (e.g., GitHub Pages project site). This keeps dev behavior unchanged.
+  base: "./",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

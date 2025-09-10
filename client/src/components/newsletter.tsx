@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { env } from "@/lib/env";
 import { Send } from "lucide-react";
 
 export default function Newsletter() {
@@ -25,16 +26,18 @@ export default function Newsletter() {
     setIsLoading(true);
     
     try {
-      await apiRequest("POST", "/api/subscribe", { email });
+      const endpoint = env.NEWSLETTER_ENDPOINT || "/api/subscribe";
+      await apiRequest("POST", endpoint, { email });
       toast({
         title: "Success!",
         description: "You've joined the anti-farming revolution!",
       });
       setEmail("");
     } catch (error) {
+      const message = error instanceof Error ? error.message : "Failed to subscribe. Please try again.";
       toast({
         title: "Subscription Failed",
-        description: "Failed to subscribe. Please try again.",
+        description: message,
         variant: "destructive",
       });
     } finally {

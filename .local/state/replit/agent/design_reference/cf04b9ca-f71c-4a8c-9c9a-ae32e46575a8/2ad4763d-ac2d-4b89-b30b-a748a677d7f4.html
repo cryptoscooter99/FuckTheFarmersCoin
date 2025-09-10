@@ -1,0 +1,688 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTF Coin - Fuck The Farmers | Meme Coin Revolution</title>
+    <meta name="description" content="FTF Coin - The revolutionary meme coin that says fuck the farmers. Join the movement that's changing crypto forever.">
+    <meta property="og:title" content="FTF Coin - Fuck The Farmers">
+    <meta property="og:description" content="The revolutionary meme coin that says fuck the farmers. Join the movement that's changing crypto forever.">
+    <meta property="og:image" content="/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    popover: {
+                        DEFAULT: "var(--popover)",
+                        foreground: "var(--popover-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                    chart: {
+                        "1": "var(--chart-1)",
+                        "2": "var(--chart-2)",
+                        "3": "var(--chart-3)",
+                        "4": "var(--chart-4)",
+                        "5": "var(--chart-5)",
+                    },
+                    ftf: {
+                        purple: "var(--ftf-purple)",
+                        deeppurple: "var(--ftf-deeppurple)",
+                        gold: "var(--ftf-gold)",
+                        gold700: "var(--ftf-gold-700)",
+                        teal: "var(--ftf-teal)",
+                        lilac: "var(--ftf-lilac)",
+                    }
+                },
+                fontFamily: {
+                    display: ["Baloo 2", "Fredoka", "system-ui", "sans-serif"],
+                    body: ["Inter", "system-ui", "sans-serif"],
+                },
+                boxShadow: {
+                    coin: "0 6px 0 var(--ftf-gold-700), 0 12px 24px rgba(0,0,0,.25)",
+                    insetCoin: "inset 0 4px 8px rgba(0,0,0,.25)",
+                    glow: "0 0 30px rgba(246, 183, 60, 0.3)",
+                },
+            },
+        },
+    };
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --background: hsl(255 20% 96%);
+            --foreground: hsl(255 20% 6%);
+            --card: hsl(255 20% 100%);
+            --card-foreground: hsl(255 20% 6%);
+            --popover: hsl(255 20% 100%);
+            --popover-foreground: hsl(255 20% 6%);
+            --primary: hsl(269 54% 46%);
+            --primary-foreground: hsl(48 78% 88%);
+            --secondary: hsl(269 54% 28%);
+            --secondary-foreground: hsl(48 78% 88%);
+            --muted: hsl(269 54% 86%);
+            --muted-foreground: hsl(269 54% 46%);
+            --accent: hsl(41 86% 61%);
+            --accent-foreground: hsl(269 54% 28%);
+            --destructive: hsl(0 84% 60%);
+            --destructive-foreground: hsl(48 78% 88%);
+            --border: hsl(269 30% 82%);
+            --input: hsl(269 30% 86%);
+            --ring: hsl(269 54% 46%);
+            --chart-1: hsl(269 54% 46%);
+            --chart-2: hsl(41 86% 61%);
+            --chart-3: hsl(178 88% 36%);
+            --chart-4: hsl(269 80% 66%);
+            --chart-5: hsl(269 54% 28%);
+            --radius: 0.75rem;
+            
+            --ftf-purple: hsl(269 54% 46%);
+            --ftf-deeppurple: hsl(269 54% 28%);
+            --ftf-gold: hsl(41 86% 61%);
+            --ftf-gold-700: hsl(41 86% 41%);
+            --ftf-teal: hsl(178 88% 36%);
+            --ftf-lilac: hsl(269 80% 66%);
+        }
+        
+        body {
+            background: var(--ftf-purple);
+            color: hsl(48 78% 88%);
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .btn-cta {
+            background: var(--ftf-gold);
+            color: var(--ftf-deeppurple);
+            border-radius: 9999px;
+            box-shadow: 0 8px 0 var(--ftf-gold-700), 0 16px 32px rgba(0,0,0,.25);
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 0 var(--ftf-gold-700), 0 22px 40px rgba(0,0,0,.35);
+        }
+        
+        .btn-teal {
+            background: var(--ftf-teal);
+            color: white;
+            box-shadow: 0 8px 0 hsl(178 88% 26%), 0 16px 32px rgba(0,0,0,.25);
+        }
+        
+        .btn-teal:hover {
+            box-shadow: 0 10px 0 hsl(178 88% 26%), 0 22px 40px rgba(0,0,0,.35);
+        }
+        
+        .coin-shadow {
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)) drop-shadow(0 6px 12px rgba(246, 183, 60, 0.2));
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--ftf-gold), var(--ftf-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .glass-card {
+            background: rgba(110, 56, 181, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(246, 183, 60, 0.2);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .sticky-header {
+            backdrop-filter: blur(10px);
+            background: rgba(110, 56, 181, 0.9);
+            border-bottom: 1px solid rgba(246, 183, 60, 0.2);
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 sticky-header">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-ftf-teal"></div>
+                    <span class="font-display font-bold text-xl text-accent">FTF</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="hover:text-accent transition-colors">About</a>
+                    <a href="#tokenomics" class="hover:text-accent transition-colors">Tokenomics</a>
+                    <a href="#how-to-buy" class="hover:text-accent transition-colors">How to Buy</a>
+                    <a href="#roadmap" class="hover:text-accent transition-colors">Roadmap</a>
+                    <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button class="btn-cta px-4 py-2 text-sm font-bold uppercase" data-implementation="Links to Solana DEX">BUY</button>
+                    <button class="btn-teal px-4 py-2 text-sm font-bold uppercase" data-implementation="Links to chart">CHART</button>
+                    <button class="border border-accent text-accent px-4 py-2 rounded-full text-sm font-bold hover:bg-accent hover:text-ftf-deeppurple transition-all" 
+                            onclick="copyContract()" data-implementation="Copy contract address to clipboard">
+                        COPY
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-ftf-purple via-ftf-deeppurple to-ftf-purple opacity-90"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <!-- Coin Logo (Placeholder for provided image) -->
+            <div class="mx-auto w-80 h-80 mb-8 coin-shadow float-animation">
+                <!-- Using the provided FTF coin image -->
+                <img src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                     alt="FTF Coin - Fuck The Farmers" 
+                     class="w-full h-full object-cover rounded-full border-4 border-accent shadow-glow"
+                     data-mock="true" 
+                     data-implementation="Replace with actual FTF coin image from provided assets" />
+            </div>
+            
+            <h1 class="font-display text-6xl md:text-8xl font-bold mb-4 tracking-tight">
+                <span class="text-gradient">FUCK THE</span><br>
+                <span class="text-accent">FARMERS</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-2 opacity-90 font-semibold">
+                We don't yield, we <span class="text-accent">BUILD</span>
+            </p>
+            
+            <p class="text-lg mb-8 opacity-80 max-w-2xl mx-auto">
+                The first meme coin that says FUCK FARMERS. No crop yields, no harvest promises. 
+                Just pure, unfiltered anti-agricultural sentiment.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+                <button class="btn-cta px-8 py-4 text-lg font-bold uppercase tracking-wide" data-implementation="Link to Solana DEX">
+                    <i class="fas fa-rocket mr-2"></i>BUY $FTF
+                </button>
+                <button class="btn-teal px-8 py-4 text-lg font-bold uppercase tracking-wide" data-implementation="Link to chart service">
+                    <i class="fas fa-chart-line mr-2"></i>CHART
+                </button>
+                <button class="border-2 border-accent text-accent px-8 py-4 rounded-full text-lg font-bold uppercase tracking-wide hover:bg-accent hover:text-ftf-deeppurple transition-all"
+                        onclick="copyContract()" data-implementation="Copy contract address">
+                    <i class="fas fa-copy mr-2"></i>COPY CONTRACT
+                </button>
+            </div>
+            
+            <!-- Live Market Data -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl font-bold text-accent" data-bind="marketData.price">$0.0042</div>
+                    <div class="text-sm opacity-80">Price</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl font-bold text-ftf-teal" data-bind="marketData.marketCap">$4.2M</div>
+                    <div class="text-sm opacity-80">Market Cap</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl font-bold text-ftf-lilac" data-bind="marketData.volume">$420K</div>
+                    <div class="text-sm opacity-80">24h Volume</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-center">
+                    <div class="text-2xl font-bold text-accent" data-bind="marketData.holders">6,969</div>
+                    <div class="text-sm opacity-80">Holders</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-ftf-deeppurple to-ftf-purple">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 text-accent">
+                    WHY CHOOSE $FTF?
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="glass-card rounded-2xl p-8 text-center hover:scale-105 transition-transform">
+                        <div class="text-4xl mb-4">🚫</div>
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">Zero Yields</h3>
+                        <p class="opacity-90">No farming, no staking, no harvest season. Just pure rebellious energy against agricultural metaphors in crypto.</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 text-center hover:scale-105 transition-transform">
+                        <div class="text-4xl mb-4">🔥</div>
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">Anti-Farming</h3>
+                        <p class="opacity-90">We're tired of crop references. Time to plant something different in the crypto landscape - pure chaos.</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 text-center hover:scale-105 transition-transform">
+                        <div class="text-4xl mb-4">💎</div>
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">Diamond Hands</h3>
+                        <p class="opacity-90">No weak hands allowed. We HODL against the agricultural establishment. To the moon, not the farm.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 p-8 glass-card rounded-2xl">
+                    <p class="text-xl leading-relaxed">
+                        <span class="text-accent font-bold">FTF</span> is a community-powered meme coin that celebrates builders over farmers. 
+                        No roadmap promises about harvest seasons. No yield farming bullshit. 
+                        Just pure, unfiltered <span class="text-accent font-bold">VIBES</span> and middle fingers to agricultural metaphors.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 bg-ftf-purple">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-center mb-12 text-accent">
+                    TOKENOMICS
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card rounded-2xl p-8 shadow-coin">
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">
+                            <i class="fas fa-coins mr-2"></i>Supply
+                        </h3>
+                        <div class="text-3xl font-bold mb-2">1,000,000,000</div>
+                        <p class="opacity-80">Total supply capped. No farming new tokens.</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 shadow-coin">
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">
+                            <i class="fas fa-percentage mr-2"></i>Taxes
+                        </h3>
+                        <div class="text-3xl font-bold mb-2 text-ftf-teal">0%</div>
+                        <p class="opacity-80">No buy/sell taxes. Touch grass, not our tokens.</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 shadow-coin">
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">
+                            <i class="fas fa-droplet mr-2"></i>Liquidity
+                        </h3>
+                        <div class="text-3xl font-bold mb-2 text-ftf-lilac">Locked</div>
+                        <p class="opacity-80">LP tokens burned. No rug, only fuck farmers.</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 shadow-coin">
+                        <h3 class="font-display text-2xl font-bold mb-4 text-accent">
+                            <i class="fas fa-fire mr-2"></i>Burns
+                        </h3>
+                        <div class="text-3xl font-bold mb-2 text-destructive">Random</div>
+                        <p class="opacity-80">Burn events when we feel like it. Chaos over crops.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 p-6 bg-destructive/20 border border-destructive rounded-2xl">
+                    <p class="text-center text-lg">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        <strong>Legal Notice:</strong> FTF is a meme coin with no intrinsic value or expectation of financial return. 
+                        For entertainment only. Don't invest your farm on this.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section id="how-to-buy" class="py-20 bg-gradient-to-b from-ftf-purple to-ftf-deeppurple">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-center mb-12 text-accent">
+                    HOW TO BUY
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent text-ftf-deeppurple w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold mb-2 text-accent">Get a Solana Wallet</h3>
+                                <p class="opacity-90">Download Phantom, Solflare, or your preferred Solana wallet. Don't use a farming wallet.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent text-ftf-deeppurple w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold mb-2 text-accent">Fund Your Wallet</h3>
+                                <p class="opacity-90">Buy SOL from any exchange and transfer to your wallet. Skip the farm-to-table nonsense.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent text-ftf-deeppurple w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold mb-2 text-accent">Swap on Raydium</h3>
+                                <p class="opacity-90">Go to Raydium DEX, paste the FTF contract address, and swap your SOL for $FTF.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent text-ftf-deeppurple w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold mb-2 text-accent">HODL & Spread</h3>
+                                <p class="opacity-90">Hold your $FTF with diamond hands and spread the anti-farming revolution!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8">
+                        <h3 class="font-display text-2xl font-bold mb-6 text-accent text-center">Contract Address</h3>
+                        <div class="bg-ftf-deeppurple rounded-lg p-4 mb-4">
+                            <code class="text-sm break-all" data-bind="contractAddress">FTFarmers69420BurnTheCropsToTheMoon1337</code>
+                        </div>
+                        <button class="w-full btn-cta py-3 font-bold uppercase tracking-wide" onclick="copyContract()">
+                            <i class="fas fa-copy mr-2"></i>Copy Contract Address
+                        </button>
+                        <div class="mt-6 space-y-3">
+                            <button class="w-full btn-teal py-3 font-bold uppercase tracking-wide" data-implementation="Link to Raydium">
+                                <i class="fas fa-exchange-alt mr-2"></i>Buy on Raydium
+                            </button>
+                            <button class="w-full border-2 border-accent text-accent py-3 rounded-full font-bold uppercase tracking-wide hover:bg-accent hover:text-ftf-deeppurple transition-all" data-implementation="Link to chart">
+                                <i class="fas fa-chart-line mr-2"></i>View Chart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 bg-ftf-purple">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-center mb-12 text-accent">
+                    ROADMAP TO NOWHERE
+                </h2>
+                
+                <div class="space-y-8">
+                    <div class="glass-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="bg-accent text-ftf-deeppurple w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-accent">Phase 1: Launch</h3>
+                        </div>
+                        <ul class="space-y-2 text-lg">
+                            <li>✅ Coin launched with maximum chaos</li>
+                            <li>✅ Community formed around anti-farming sentiment</li>
+                            <li>✅ First "Fuck The Farmers" memes created</li>
+                            <li>✅ Liquidity locked (no farmers allowed)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="bg-ftf-teal text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-rocket text-xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-accent">Phase 2: Rebellion</h3>
+                        </div>
+                        <ul class="space-y-2 text-lg">
+                            <li>🚀 Major CEX listings (fuck the farm exchanges)</li>
+                            <li>🚀 Anti-farming NFT collection</li>
+                            <li>🚀 Partnerships with other non-agricultural projects</li>
+                            <li>🚀 "Burn the Crops" community events</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="bg-ftf-lilac text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-crown text-xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-accent">Phase 3: Domination</h3>
+                        </div>
+                        <ul class="space-y-2 text-lg">
+                            <li>👑 Global anti-farming movement</li>
+                            <li>👑 FTF becomes the standard for non-agricultural memes</li>
+                            <li>👑 We'll do it live - whatever the community wants</li>
+                            <li>👑 Moon mission (but not farm moon)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-xl opacity-90">
+                        <span class="text-accent font-bold">Remember:</span> This roadmap is as real as our commitment to never farming. 
+                        We promise nothing and deliver exactly that, plus some chaos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gradient-to-b from-ftf-deeppurple to-ftf-purple">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-center mb-12 text-accent">
+                    FAQ
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="glass-card rounded-2xl overflow-hidden">
+                        <details class="group">
+                            <summary class="p-6 cursor-pointer hover:bg-white/5 transition-colors">
+                                <h3 class="font-display text-xl font-bold text-accent inline">What the fuck is FTF?</h3>
+                                <i class="fas fa-chevron-down float-right mt-1 group-open:rotate-180 transition-transform"></i>
+                            </summary>
+                            <div class="px-6 pb-6">
+                                <p class="text-lg opacity-90">FTF (Fuck The Farmers) is a meme coin built on Solana that represents our collective exhaustion with agricultural metaphors in crypto. No more yield farming, crop harvesting, or seed planting. Just pure, unfiltered rebellion.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl overflow-hidden">
+                        <details class="group">
+                            <summary class="p-6 cursor-pointer hover:bg-white/5 transition-colors">
+                                <h3 class="font-display text-xl font-bold text-accent inline">Will I get rich from FTF?</h3>
+                                <i class="fas fa-chevron-down float-right mt-1 group-open:rotate-180 transition-transform"></i>
+                            </summary>
+                            <div class="px-6 pb-6">
+                                <p class="text-lg opacity-90">Probably not, but you'll have fun losing money with other anti-farming degenerates. This is a meme coin with zero utility, zero promises, and maximum chaos. Invest only what you can afford to lose to the void.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl overflow-hidden">
+                        <details class="group">
+                            <summary class="p-6 cursor-pointer hover:bg-white/5 transition-colors">
+                                <h3 class="font-display text-xl font-bold text-accent inline">Is there a team behind this?</h3>
+                                <i class="fas fa-chevron-down float-right mt-1 group-open:rotate-180 transition-transform"></i>
+                            </summary>
+                            <div class="px-6 pb-6">
+                                <p class="text-lg opacity-90">We're a collective of anonymous builders who are tired of farming metaphors. No doxxed team, no venture capital, no corporate farming. Just pure grassroots (but not the farming kind) community energy.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl overflow-hidden">
+                        <details class="group">
+                            <summary class="p-6 cursor-pointer hover:bg-white/5 transition-colors">
+                                <h3 class="font-display text-xl font-bold text-accent inline">Can I stake or farm FTF?</h3>
+                                <i class="fas fa-chevron-down float-right mt-1 group-open:rotate-180 transition-colors"></i>
+                            </summary>
+                            <div class="px-6 pb-6">
+                                <p class="text-lg opacity-90">ABSOLUTELY FUCKING NOT. The entire point is that we don't farm. You can't stake it, farm it, or harvest it. You can only HODL it and spread the anti-farming revolution. No yields, no crops, just vibes.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl overflow-hidden">
+                        <details class="group">
+                            <summary class="p-6 cursor-pointer hover:bg-white/5 transition-colors">
+                                <h3 class="font-display text-xl font-bold text-accent inline">When will FTF moon?</h3>
+                                <i class="fas fa-chevron-down float-right mt-1 group-open:rotate-180 transition-transform"></i>
+                            </summary>
+                            <div class="px-6 pb-6">
+                                <p class="text-lg opacity-90">It will moon when the farmers are defeated and agricultural metaphors are banned from crypto forever. Until then, we HODL with diamond hands and spread chaos. The moon is not a farm - it's our destination.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-20 bg-ftf-purple">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-accent">
+                    JOIN THE REVOLUTION
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Get updates on our anti-farming activities. No spam, just chaos.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-4" data-implementation="Connect to newsletter API">
+                    <input 
+                        type="email" 
+                        placeholder="your@email.com" 
+                        class="flex-1 px-6 py-4 rounded-full bg-ftf-deeppurple border border-accent text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-accent"
+                        data-bind="emailInput"
+                    />
+                    <button type="submit" class="btn-cta px-8 py-4 font-bold uppercase tracking-wide">
+                        <i class="fas fa-paper-plane mr-2"></i>SUBSCRIBE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-ftf-deeppurple border-t border-accent/20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-ftf-teal"></div>
+                        <span class="font-display font-bold text-2xl text-accent">FTF COIN</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-2xl hover:text-accent transition-colors" data-implementation="Link to Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-accent transition-colors" data-implementation="Link to Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-accent transition-colors" data-implementation="Link to Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-accent transition-colors" data-implementation="Link to Reddit">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-accent/20 text-center">
+                    <p class="opacity-80">
+                        © 2024 FTF Coin. No rights reserved. Fuck the farmers. Not financial advice.
+                    </p>
+                    <p class="mt-2 text-sm opacity-60">
+                        Built by the community, for the community. No VCs, no farms, just vibes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address functionality
+        function copyContract() {
+            const contractAddress = "FTFarmers69420BurnTheCropsToTheMoon1337"; // TODO: Replace with actual contract address
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                // Show success message
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-2"></i>COPIED!';
+                button.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-500');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy contract address:', err);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // TODO: Implement business logic for:
+        // - Newsletter subscription API integration
+        // - Real-time market data fetching
+        // - Social media integration
+        // - Analytics tracking
+        // - Wallet connection functionality
+        // - Buy/Chart button linking to actual DEX/chart services
+    </script>
+</body>
+</html>

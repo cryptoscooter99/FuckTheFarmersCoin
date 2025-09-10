@@ -13,4 +13,11 @@ export const env = {
   REDDIT: import.meta.env.VITE_REDDIT || "https://reddit.com/r/ftfccoin",
   ANALYTICS_ENABLED: import.meta.env.VITE_ANALYTICS_ENABLED === "true",
   PLAUSIBLE_DOMAIN: import.meta.env.VITE_PLAUSIBLE_DOMAIN || "ftfccoin.xyz",
+
+  // API config
+  // If deploying the API separately (e.g. Render/Fly/Railway), set VITE_API_BASE_URL
+  // to that origin (e.g. https://api.ftfccoin.xyz). For static-only newsletter,
+  // set VITE_NEWSLETTER_ENDPOINT to a full external endpoint (e.g. Formspree URL).
+  API_BASE_URL: import.meta.env.VITE_API_BASE_URL || "",
+  NEWSLETTER_ENDPOINT: import.meta.env.VITE_NEWSLETTER_ENDPOINT || "",
 };

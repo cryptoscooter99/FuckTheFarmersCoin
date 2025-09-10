@@ -1,4 +1,23 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import { env } from "./env";
+
+export function getApiUrl(pathOrUrl: string): string {
+  // If it's an absolute URL, return as-is
+  try {
+    const u = new URL(pathOrUrl);
+    return u.toString();
+  } catch {
+    // not an absolute URL
+  }
+
+  // If it starts with / and API_BASE_URL is configured, prefix it
+  if (pathOrUrl.startsWith("/") && env.API_BASE_URL) {
+    return `${env.API_BASE_URL}${pathOrUrl}`;
+  }
+
+  // Otherwise return as-is (relative fetch)
+  return pathOrUrl;
+}
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -12,7 +31,7 @@ export async function apiRequest(
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const res = await fetch(url, {
+  const res = await fetch(getApiUrl(url), {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
@@ -29,7 +48,8 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey.join("/") as string, {
+    const key = queryKey.join("/") as string;
+    const res = await fetch(getApiUrl(key), {
       credentials: "include",
     });
 
