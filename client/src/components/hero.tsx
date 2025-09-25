@@ -54,8 +54,8 @@ export default function Hero() {
         </div>
 
         <h1 className="font-urban text-6xl md:text-8xl font-bold mb-4 tracking-tight">
-          <span className="text-gradient" data-testid="hero-title-line1">FUCK THE</span><br />
-          <span className="text-ftf-gold" data-testid="hero-title-line2">FARMERS</span>
+          <span className="text-gradient text-outline-gold" data-testid="hero-title-line1">FUCK THE</span><br />
+          <span className="text-ftf-gold text-outline-black" data-testid="hero-title-line2">FARMERS</span>
         </h1>
 
         <p className="text-xl md:text-2xl mb-2 opacity-90 font-semibold" data-testid="hero-subtitle">

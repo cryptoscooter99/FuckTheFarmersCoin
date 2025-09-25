@@ -136,6 +136,22 @@
     background-clip: text;
   }
 
+  .text-outline-gold {
+    text-shadow:
+      -0.75px -0.75px 0 rgba(246, 183, 60, 0.85),
+      0.75px -0.75px 0 rgba(246, 183, 60, 0.85),
+      -0.75px 0.75px 0 rgba(246, 183, 60, 0.85),
+      0.75px 0.75px 0 rgba(246, 183, 60, 0.85);
+  }
+
+  .text-outline-black {
+    text-shadow:
+      -0.75px -0.75px 0 rgba(0, 0, 0, 0.85),
+      0.75px -0.75px 0 rgba(0, 0, 0, 0.85),
+      -0.75px 0.75px 0 rgba(0, 0, 0, 0.85),
+      0.75px 0.75px 0 rgba(0, 0, 0, 0.85);
+  }
+
   .sticky-header {
     backdrop-filter: blur(10px);
     background: rgba(110, 56, 181, 0.9);
