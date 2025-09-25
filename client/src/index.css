@@ -87,6 +87,14 @@
     color: var(--ftf-text);
     font-family: 'Inter', system-ui, sans-serif;
   }
+
+  body :where(p, span, a, button, li, label, small, strong, em, h1, h2, h3, h4, h5, h6, blockquote) {
+    text-shadow:
+      -0.75px -0.75px 0 rgba(0, 0, 0, 0.85),
+      0.75px -0.75px 0 rgba(0, 0, 0, 0.85),
+      -0.75px 0.75px 0 rgba(0, 0, 0, 0.85),
+      0.75px 0.75px 0 rgba(0, 0, 0, 0.85);
+  }
 }
 
 @layer components {
